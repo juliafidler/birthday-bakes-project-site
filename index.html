@@ -1,474 +1,421 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cakes & Candles Project</title>
-  <style>
-    :root {
-      --bg: #fff9fb;
-      --white: #ffffff;
-      --text: #3e2b31;
-      --muted: #75656b;
-      --line: #edd9e0;
-      --soft: #fff3f7;
-      --accent: #d78099;
-      --accent-dark: #bf5f7e;
-      --shadow: 0 16px 40px rgba(88, 51, 61, 0.08);
-    }
-
-```
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: linear-gradient(180deg, #fff 0%, #fff9fb 100%);
-  line-height: 1.65;
-}
-
-a { color: inherit; text-decoration: none; }
-
-.container {
-  width: min(1140px, 92%);
-  margin: 0 auto;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(237,217,224,0.9);
-}
-
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  padding: 18px 0;
-}
-
-.brand {
-  font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.brand-sub {
-  margin-top: 2px;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  align-items: center;
-  font-size: 0.95rem;
-}
-
-.nav a {
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.nav a:hover, .nav a.active { color: var(--text); }
-
-.hero {
-  padding: 78px 0 48px;
-  background: linear-gradient(180deg, #fff 0%, #fff6fa 100%);
-}
-
-.hero-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.eyebrow {
-  display: inline-block;
-  margin-bottom: 14px;
-  color: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-}
-
-h1 {
-  margin: 0 0 20px;
-  font-size: clamp(3rem, 6.3vw, 5.7rem);
-  line-height: 0.95;
-  letter-spacing: -0.07em;
-}
-
-h2 {
-  margin: 0 0 14px;
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
-  line-height: 1.08;
-  letter-spacing: -0.05em;
-}
-
-h3 {
-  margin: 0 0 8px;
-  font-size: 1.06rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-p { margin: 0; }
-
-.lead {
-  max-width: 760px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 1.12rem;
-}
-
-.hero-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 22px;
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: 0.96rem;
-  transition: transform 0.18s ease, opacity 0.18s ease;
-}
-
-.btn:hover { transform: translateY(-1px); opacity: 0.97; }
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  color: white;
-  box-shadow: 0 12px 28px rgba(191, 95, 126, 0.22);
-}
-
-.btn-secondary {
-  background: var(--white);
-  border: 1px solid var(--line);
-  color: var(--text);
-}
-
-.hero-note {
-  margin: 22px auto 0;
-  max-width: 720px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.section {
-  padding: 34px 0;
-}
-
-.section-card, .info-card, .footer-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-}
-
-.section-card {
-  border-radius: 18px;
-  padding: 34px;
-}
-
-.info-card {
-  border-radius: 16px;
-  padding: 24px;
-  background: #fffbfd;
-}
-
-.grid-2, .grid-3 {
-  display: grid;
-  gap: 18px;
-}
-
-.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-.muted { color: var(--muted); }
-
-.statement {
-  max-width: 760px;
-  margin-bottom: 24px;
-}
-
-.step-num {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--soft);
-  color: var(--accent-dark);
-  font-weight: 800;
-  margin-bottom: 14px;
-}
-
-.dark-section {
-  background: linear-gradient(150deg, #4a3139 0%, #6a4451 100%);
-  color: white;
-  border-radius: 18px;
-  padding: 36px;
-  box-shadow: 0 24px 55px rgba(74, 49, 57, 0.22);
-  position: relative;
-  overflow: hidden;
-}
-
-.dark-section::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.07);
-  top: -110px;
-  right: -90px;
-}
-
-.dark-section > * { position: relative; z-index: 1; }
-.dark-section .muted { color: rgba(255,255,255,0.8); }
-
-.dark-panel {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 16px;
-  padding: 24px;
-}
-
-ul {
-  margin: 12px 0 0;
-  padding-left: 18px;
-}
-
-li { margin-bottom: 8px; }
-
-.volunteer-board-embed {
-  margin-top: 22px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  overflow: hidden;
-  background: var(--white);
-  box-shadow: var(--shadow);
-}
-
-.volunteer-board-embed iframe {
-  width: 100%;
-  height: 1400px;
-  border: 0;
-  display: block;
-}
-
-.footer {
-  padding: 30px 0 40px;
-}
-
-.footer-card {
-  border-radius: 16px;
-  text-align: center;
-  padding: 18px 20px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-@media (max-width: 950px) {
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .topbar { flex-direction: column; align-items: flex-start; }
-  .hero { padding-top: 54px; }
-  .section-card, .dark-section { padding: 24px; }
-  .volunteer-board-embed iframe { height: 1600px; }
-}
-```
-
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cakes &amp; Candles Project · Free birthday cakes for children in foster care &amp; shelters</title>
+<meta name="description" content="Cakes & Candles Project bakes free birthday cakes for children in foster care, shelters, and residential programs across Oakland County, Michigan." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #E7D2C2; color: #2C2230; }
+  @keyframes flick {
+    0%,100% { transform: translateX(-50%) scaleY(1) rotate(-1deg); }
+    35% { transform: translateX(-50%) scaleY(1.16) rotate(1.5deg); }
+    70% { transform: translateX(-50%) scaleY(.9) rotate(-1.5deg); }
+  }
+  @keyframes glowpulse { 0%,100% { opacity: .55; transform: translateX(-50%) scale(1); } 50% { opacity: .9; transform: translateX(-50%) scale(1.16); } }
+  @keyframes smokeup { 0% { opacity: 0; transform: translateX(-50%) translateY(0) scaleX(1); } 20% { opacity: .5; } 100% { opacity: 0; transform: translateX(-50%) translateY(-52px) scaleX(2.6); } }
+  @keyframes cakebob { 0%,100% { transform: scale(var(--cs)) translateY(0) rotate(-.3deg); } 50% { transform: scale(var(--cs)) translateY(-7px) rotate(.3deg); } }
+  @keyframes mote { 0% { transform: translateY(0) translateX(0); opacity: 0; } 15% { opacity: .8; } 85% { opacity: .7; } 100% { transform: translateY(-120px) translateX(18px); opacity: 0; } }
+  .cakefloat { animation: cakebob 6.5s ease-in-out infinite; }
+  .cpart { opacity: 0; transform: translateY(-46px) scale(.95); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .75s cubic-bezier(.34,1.56,.64,1); }
+  .cpart.placed { opacity: 1; transform: none; }
+  .deco { opacity: 0; transform: scale(.4); transition: opacity .55s ease, transform .55s cubic-bezier(.34,1.56,.64,1); }
+  .deco.placed { opacity: 1; transform: scale(1); }
+  .flame { opacity: 0; transition: opacity .7s ease; transform-origin: bottom center; }
+  .flame.lit { opacity: 1; animation: flick 1.4s ease-in-out infinite; }
+  .fglow { opacity: 0; transition: opacity .7s ease; }
+  .fglow.lit { opacity: 1; animation: glowpulse 1.7s ease-in-out infinite; }
+  .smoke { opacity: 0; }
+  .smoke.go { animation: smokeup 1.5s ease-out forwards; }
+  .mote { animation: mote linear infinite; }
+  [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 1s cubic-bezier(.2,.8,.2,1), transform 1s cubic-bezier(.2,.8,.2,1); }
+  [data-reveal].in { opacity: 1; transform: none; }
+  .panel { opacity: 0; transform: translateY(40px); transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
+  .panel.show { opacity: 1; transform: none; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-plus { transform: rotate(45deg); }
+  a.ulink { position: relative; }
+  a.ulink::after { content: ''; position: absolute; left: 0; bottom: -3px; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+  a.ulink:hover::after { transform: scaleX(1); }
+  .btn { transition: background .3s ease, color .3s ease, border-color .3s ease, transform .25s ease, box-shadow .3s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .card { transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s ease, border-color .5s ease; }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 28px 54px rgba(44,34,48,.12); border-color: #C18A98; }
+  .raildot { transition: background .45s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
+  @keyframes flamepulse { 0%,100% { transform: scaleY(1); } 50% { transform: scaleY(1.16); } }
+  .svgflame { opacity: 0; transition: opacity .55s ease; transform-box: fill-box; transform-origin: center bottom; }
+  .svgflame.lit { opacity: 1; animation: flamepulse 1.5s ease-in-out infinite; }
+  .svgglow { opacity: 0; transition: opacity .7s ease; }
+  .svgglow.lit { opacity: .9; }
+  .gdot { opacity: 0; transform: scale(.3); transform-box: fill-box; transform-origin: center; transition: opacity .6s ease, transform .6s cubic-bezier(.34,1.56,.64,1); }
+  .gdot.on { opacity: 1; transform: scale(1); }
+  @media (max-width: 820px) {
+    .ovpanel { width: 88% !important; }
+    .cakestage { --cs: 1.04 !important; }
+    .rail { display: none !important; }
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="container topbar">
-      <div>
-        <div class="brand">Cakes &amp; Candles Project</div>
-        <div class="brand-sub">A student-led cake initiative serving children across Oakland County</div>
-      </div>
-      <nav class="nav">
-        <a class="active" href="#request">Request a Cake</a>
-        <a href="#help">Learn How to Help</a>
-        <a href="#partner">Partner with Cakes &amp; Candles Project</a>
-      </nav>
+
+<div style="font-family: Mulish, sans-serif; color: #2C2230; background: radial-gradient(120% 80% at 60% 30%, #FCF8F1 0%, #F4E9DA 52%, #E7D6C2 100%); position: relative;">
+
+  <!-- FIXED CAKE STAGE (background) -->
+  <div class="cakestage" style="--cs: 1.12; position: fixed; inset: 0; z-index: 0; display: grid; place-items: center; overflow: hidden; pointer-events: none;">
+    <!-- vignette -->
+    <div style="position: absolute; inset: 0; background: radial-gradient(70% 60% at 60% 42%, rgba(0,0,0,0) 40%, rgba(56,40,36,.16) 100%);"></div>
+    <!-- spotlight -->
+    <div id="washRef" style="position: absolute; left: 60%; top: 44%; width: 720px; height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(255,206,128,.30) 0%, rgba(255,206,128,0) 62%); transform: translate(-50%,-50%); opacity: .25; transition: opacity 1.1s ease;"></div>
+    <!-- dust motes -->
+    <div class="mote" style="position: absolute; left: 52%; top: 60%; width: 5px; height: 5px; border-radius: 50%; background: rgba(255,224,170,.8); filter: blur(1px); animation-duration: 9s;"></div>
+    <div style="position: absolute; left: 64%; top: 66%; width: 4px; height: 4px; border-radius: 50%; background: rgba(255,224,170,.7); filter: blur(1px); animation-duration: 11s; animation-delay: 2s;" class="mote"></div>
+    <div style="position: absolute; left: 58%; top: 70%; width: 6px; height: 6px; border-radius: 50%; background: rgba(255,224,170,.6); filter: blur(1.5px); animation-duration: 13s; animation-delay: 4s;" class="mote"></div>
+    <div style="position: absolute; left: 70%; top: 58%; width: 4px; height: 4px; border-radius: 50%; background: rgba(255,224,170,.7); filter: blur(1px); animation-duration: 10s; animation-delay: 1s;" class="mote"></div>
+
+    <div id="cakeRef" class="cakefloat" style="position: relative; left: 6%; top: -58px; filter: drop-shadow(0 18px 22px rgba(44,34,48,.12));">
+      <svg width="412" viewBox="0 0 300 400" fill="none" style="display:block; overflow:visible;">
+        <defs>
+          <radialGradient id="lafg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFCE80" stop-opacity=".85"/>
+            <stop offset="70%" stop-color="#FFCE80" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <g stroke="#2C2230" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path class="cstroke" data-stage="0" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:0; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1);" d="M122 322 L122 348 M178 322 L178 348"/>
+          <ellipse class="cstroke" data-stage="0" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:0; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1);" cx="150" cy="356" rx="64" ry="9"/>
+          <path class="cstroke" data-stage="1" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1);" d="M56 252 L56 322 Q150 346 244 322 L244 252"/>
+          <ellipse class="cstroke" data-stage="1" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1); transition-delay:.18s;" cx="150" cy="252" rx="94" ry="17"/>
+          <path class="cstroke" data-stage="2" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1);" d="M83 180 L83 242 Q150 260 217 242 L217 180"/>
+          <ellipse class="cstroke" data-stage="2" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1); transition-delay:.18s;" cx="150" cy="180" rx="67" ry="13"/>
+          <path class="cstroke" data-stage="3" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1);" d="M105 122 L105 170 Q150 184 195 170 L195 122"/>
+          <ellipse class="cstroke" data-stage="3" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1); transition-delay:.18s;" cx="150" cy="122" rx="45" ry="10"/>
+          <path class="cstroke" data-stage="4" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1);" d="M72 286 Q111 305 150 286 Q189 305 228 286"/>
+          <path class="cstroke" data-stage="5" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1);" d="M118 118 L118 86"/>
+          <path class="cstroke" data-stage="5" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1); transition-delay:.1s;" d="M134 118 L134 78"/>
+          <path class="cstroke" data-stage="5" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1); transition-delay:.2s;" d="M150 118 L150 72"/>
+          <path class="cstroke" data-stage="5" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1); transition-delay:.3s;" d="M166 118 L166 78"/>
+          <path class="cstroke" data-stage="5" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; transition: stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1); transition-delay:.4s;" d="M182 118 L182 86"/>
+        </g>
+        <g>
+          <ellipse class="svgglow" cx="118" cy="74" rx="22" ry="24" fill="url(#lafg)"/>
+          <ellipse class="svgglow" cx="134" cy="66" rx="22" ry="24" fill="url(#lafg)"/>
+          <ellipse class="svgglow" cx="150" cy="60" rx="24" ry="26" fill="url(#lafg)"/>
+          <ellipse class="svgglow" cx="166" cy="66" rx="22" ry="24" fill="url(#lafg)"/>
+          <ellipse class="svgglow" cx="182" cy="74" rx="22" ry="24" fill="url(#lafg)"/>
+        </g>
+        <g fill="#9C5C72">
+          <path class="svgflame" d="M118 86 q-7 -9 0 -20 q7 11 0 20 Z"/>
+          <path class="svgflame" d="M134 78 q-7 -9 0 -20 q7 11 0 20 Z"/>
+          <path class="svgflame" d="M150 72 q-8 -10 0 -22 q8 12 0 22 Z"/>
+          <path class="svgflame" d="M166 78 q-7 -9 0 -20 q7 11 0 20 Z"/>
+          <path class="svgflame" d="M182 86 q-7 -9 0 -20 q7 11 0 20 Z"/>
+        </g>
+        <g fill="#C99A3F">
+          <circle class="gdot" data-stage="4" cx="104" cy="300" r="3.6"/>
+          <circle class="gdot" data-stage="4" cx="196" cy="298" r="3.2"/>
+          <circle class="gdot" data-stage="4" cx="150" cy="262" r="3.4"/>
+          <circle class="gdot" data-stage="4" cx="120" cy="212" r="3"/>
+          <circle class="gdot" data-stage="4" cx="182" cy="214" r="2.8"/>
+          <circle class="gdot" data-stage="4" cx="150" cy="150" r="2.8"/>
+        </g>
+      </svg>
     </div>
+  </div>
+
+  <!-- PROGRESS RAIL -->
+  <div class="rail" style="position: fixed; left: 30px; top: 50%; transform: translateY(-50%); z-index: 40; display: flex; flex-direction: column; gap: 16px; pointer-events: none;">
+    <div class="raildot" data-r="0" style="width: 9px; height: 9px; border-radius: 50%; background: #2C2230; transform: scale(1.25);"></div>
+    <div class="raildot" data-r="1" style="width: 9px; height: 9px; border-radius: 50%; background: rgba(44,34,48,.2);"></div>
+    <div class="raildot" data-r="2" style="width: 9px; height: 9px; border-radius: 50%; background: rgba(44,34,48,.2);"></div>
+    <div class="raildot" data-r="3" style="width: 9px; height: 9px; border-radius: 50%; background: rgba(44,34,48,.2);"></div>
+    <div class="raildot" data-r="4" style="width: 9px; height: 9px; border-radius: 50%; background: rgba(44,34,48,.2);"></div>
+    <div class="raildot" data-r="5" style="width: 9px; height: 9px; border-radius: 50%; background: rgba(44,34,48,.2);"></div>
+    <div class="raildot" data-r="6" style="width: 9px; height: 9px; border-radius: 50%; background: rgba(44,34,48,.2);"></div>
+  </div>
+
+  <!-- NAV -->
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 50;">
+    <nav style="max-width: 1280px; margin: 0 auto; padding: 22px 36px; display: flex; align-items: center; justify-content: space-between; gap: 18px;">
+      <a href="#top" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; line-height: 1;">
+        <span style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 25px; letter-spacing: .01em;">Cakes &amp; Candles</span>
+        <span style="font-size: 10px; letter-spacing: .32em; text-transform: uppercase; color: #9A8478; margin-top: 4px;">The Project · Est. 2026</span>
+      </a>
+      <a href="#involved" class="btn" style="text-decoration: none; padding: 11px 24px; border: 1px solid #2C2230; border-radius: 999px; color: #2C2230; letter-spacing: .1em; font-size: 12px; text-transform: uppercase; font-weight: 700; background: rgba(251,248,243,.6); backdrop-filter: blur(6px);">Request a Cake</a>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="eyebrow">For children in foster care, shelters, and residential programs</div>
-        <h1>Celebrating children one birthday cake at a time.</h1>
-        <p class="lead">
-          Cakes &amp; Candles Project is a volunteer-powered program that provides free birthday cakes for children in foster care, homeless shelters, women’s shelters, family housing programs, and residential youth services across Oakland County.
-        </p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#request">Request a Cake</a>
-          <a class="btn btn-secondary" href="#help">Learn How to Help</a>
-          <a class="btn btn-secondary" href="#partner">Partner with Cakes &amp; Candles Project</a>
+  <!-- OVERLAY CONTENT -->
+  <main style="position: relative; z-index: 10;">
+
+    <!-- 0 hero -->
+    <section id="top" class="bsec" data-stage="0" style="min-height: 100vh; display: flex; align-items: center; justify-content: flex-start; padding: 0 7vw;">
+      <div class="panel ovpanel" style="width: 46%; padding: 40px 44px; border-radius: 20px; background: radial-gradient(120% 130% at 0% 0%, rgba(251,248,243,.96), rgba(251,248,243,.78)); backdrop-filter: blur(3px); box-shadow: 0 30px 70px rgba(44,34,48,.10);">
+        <div style="display: inline-flex; align-items: center; gap: 12px; font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: #B07C8C; font-weight: 700;"><span style="width: 26px; height: 1px; background: #C18A98;"></span>For children in foster care &amp; shelters</div>
+        <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(44px, 5vw, 76px); line-height: 1.0; letter-spacing: -.01em; margin: 20px 0 0; color: #241A28;">Every child<br>deserves to feel<br><span style="font-style: italic; color: #9C5C72;">remembered.</span></h1>
+        <p style="max-width: 440px; margin: 24px 0 0; font-size: 17px; line-height: 1.75; color: #5E5158;">We bake free birthday cakes for children in foster care and shelters — quiet, handmade proof that they are seen, valued, and worth celebrating.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px;">
+          <a href="#involved" class="btn" style="text-decoration: none; padding: 15px 30px; border-radius: 999px; background: #2C2230; color: #FBF8F3; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;">Request a Cake</a>
+          <a href="#help" class="btn" style="text-decoration: none; padding: 15px 30px; border-radius: 999px; background: transparent; border: 1px solid #CBBFB4; color: #2C2230; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;">Volunteer</a>
         </div>
-        <div class="hero-note">We work with staff, caseworkers, and program partners to help make sure a child’s birthday feels special, even in difficult circumstances.</div>
+        <div style="margin-top: 40px; display: inline-flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: #9A8478; font-weight: 600;"><span>Scroll — watch it come together</span><span style="font-size: 16px;">↓</span></div>
       </div>
     </section>
 
-```
-<section class="section">
-  <div class="container section-card">
-    <div class="eyebrow">Our mission</div>
-    <h2>To make sure children feel celebrated, seen, and cared for on their birthday.</h2>
-    <p class="muted statement">
-      A birthday cake may seem small, but for a child living in foster care, a shelter, or transitional housing, it can be a meaningful reminder that they matter. Cakes &amp; Candles Project exists to make those moments happen with care, consistency, and community support.
-    </p>
-    <div class="grid-3">
-      <div class="info-card">
-        <h3>Who we serve</h3>
-        <p class="muted">Children in foster care, homeless shelters, women’s shelters, family housing programs, and residential youth services.</p>
+    <!-- 1 foundation -->
+    <section id="mission" class="bsec" data-stage="1" style="min-height: 100vh; display: flex; align-items: center; justify-content: flex-end; padding: 0 7vw;">
+      <div class="panel ovpanel" style="width: 42%; padding: 38px 42px; border-radius: 20px; background: radial-gradient(120% 130% at 100% 0%, rgba(251,248,243,.96), rgba(251,248,243,.76)); backdrop-filter: blur(3px); box-shadow: 0 30px 70px rgba(44,34,48,.10); text-align: right;">
+        <div style="font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B07C8C; font-weight: 700;">Step One · The Foundation</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.14; margin: 16px 0 0; color: #241A28;">Every cake begins with <span style="font-style: italic; color: #9C5C72;">a reason.</span></h2>
+        <p style="font-size: 16px; line-height: 1.75; color: #5E5158; margin: 18px 0 0;">A birthday cake is small. But to a child in foster care or a shelter, it is proof that someone noticed, someone cared, and someone showed up — for them, on their day.</p>
       </div>
-      <div class="info-card">
-        <h3>Where we serve</h3>
-        <p class="muted">Currently focused on Oakland County, with the goal of building strong local partnerships first.</p>
-      </div>
-      <div class="info-card">
-        <h3>How it works</h3>
-        <p class="muted">Birthday cake requests are submitted by staff and coordinated directly for pickup or delivery.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section" id="request">
-  <div class="container dark-section">
-    <div class="eyebrow" style="color:#ffd9e4;">Request a cake</div>
-    <h2>Request a birthday cake for a child you serve.</h2>
-    <p class="muted" style="max-width:720px;">
-      If you are a staff member, caseworker, or approved program contact, you can request a birthday cake for a child in your care. Requests should ideally be submitted at least 1 to 2 weeks in advance.
-    </p>
-    <div class="grid-2" style="margin-top:24px;">
-      <div class="dark-panel">
-        <h3>Suggested request details</h3>
-        <ul>
-          <li>Child’s first name or initials</li>
-          <li>Age turning</li>
-          <li>Date needed</li>
-          <li>Allergies or restrictions</li>
-          <li>Preferred colors or simple theme</li>
-          <li>Best staff contact for coordination</li>
-        </ul>
-      </div>
-      <div class="dark-panel">
-        <h3>Request form</h3>
-        <p class="muted"></p>
-        <p style="margin-top:18px;"><a class="btn btn-secondary" href="https://forms.gle/fDsDwsNHysbts3EV7" target="_blank" rel="noopener noreferrer">Open Request Form</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="help">
-  <div class="container section-card">
-    <div class="eyebrow">Learn how to help</div>
-    <h2>Volunteers make every birthday possible.</h2>
-    <p class="muted statement">
-      From baking cakes to donating supplies to helping coordinate deliveries, volunteers are at the heart of this project. There are simple ways to get involved and make a child’s birthday feel special.
-    </p>
-
-    <div class="grid-2">
-      <div class="info-card">
-        <div class="step-num">1</div>
-        <div style="position:relative;">
-          <h3>Bake</h3>
-          <p class="muted">Volunteer bakers can help fulfill birthday cake requests as the project grows. Cakes do not need to be professional or perfect. Simple, handmade, and thoughtful is exactly what makes this special.</p>
-          <img src="images/cake.png" style="position:absolute; top:-5px; right:-5px; width:36px; opacity:0.6;" />
+    <!-- 2 layers / impact -->
+    <section id="impact" class="bsec" data-stage="2" style="min-height: 100vh; display: flex; align-items: center; justify-content: flex-start; padding: 0 7vw;">
+      <div class="panel ovpanel" style="width: 44%; padding: 38px 42px; border-radius: 20px; background: radial-gradient(120% 130% at 0% 0%, rgba(251,248,243,.96), rgba(251,248,243,.76)); backdrop-filter: blur(3px); box-shadow: 0 30px 70px rgba(44,34,48,.10);">
+        <div style="font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B07C8C; font-weight: 700;">Step Two · The Layers</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.12; margin: 16px 0 0; color: #241A28;">Small in size. <span style="font-style: italic; color: #9C5C72;">Immeasurable</span> in meaning.</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 26px; border-top: 1px solid #E2D4C4;">
+          <div style="padding: 22px 18px; border-right: 1px solid #E2D4C4; border-bottom: 1px solid #E2D4C4;"><div class="counter" data-count="120" data-suffix="+" style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 46px; line-height: 1; color: #241A28;">0</div><div style="margin-top: 6px; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: #9A8478; font-weight: 700;">Cakes baked</div></div>
+          <div style="padding: 22px 18px; border-bottom: 1px solid #E2D4C4;"><div class="counter" data-count="8" style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 46px; line-height: 1; color: #241A28;">0</div><div style="margin-top: 6px; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: #9A8478; font-weight: 700;">Shelter partners</div></div>
+          <div style="padding: 22px 18px; border-right: 1px solid #E2D4C4;"><div class="counter" data-count="40" data-suffix="+" style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 46px; line-height: 1; color: #241A28;">0</div><div style="margin-top: 6px; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: #9A8478; font-weight: 700;">Volunteer bakers</div></div>
+          <div style="padding: 22px 18px;"><div class="counter" data-count="100" data-suffix="%" style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 46px; line-height: 1; color: #9C5C72;">0</div><div style="margin-top: 6px; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: #9A8478; font-weight: 700;">Free, always</div></div>
         </div>
       </div>
+    </section>
 
-      <div class="info-card">
-        <div class="step-num">2</div>
-        <div style="position:relative;">
-          <h3>Donate supplies</h3>
-          <p class="muted">Support can include cake boards, boxes, ingredients, frosting tools, candles, toppers, and other simple baking essentials that help each birthday come together.</p>
-          <img src="images/baking.png" style="position:absolute; top:-5px; right:-5px; width:36px; opacity:0.6;" />
+    <!-- 3 story -->
+    <section id="story" class="bsec" data-stage="3" style="min-height: 100vh; display: flex; align-items: center; justify-content: flex-end; padding: 0 7vw;">
+      <div class="panel ovpanel" style="width: 42%; padding: 38px 42px; border-radius: 20px; background: radial-gradient(120% 130% at 100% 0%, rgba(251,248,243,.96), rgba(251,248,243,.76)); backdrop-filter: blur(3px); box-shadow: 0 30px 70px rgba(44,34,48,.10); text-align: right;">
+        <div style="font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B07C8C; font-weight: 700;">Step Three · The Crown</div>
+        <p style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.3; margin: 16px 0 0; color: #241A28;">"Something as simple as a birthday cake can mean so much to a child who doesn't always get to celebrate."</p>
+        <p style="color: #5E5158; font-size: 15.5px; line-height: 1.75; margin: 20px 0 0;">Founded by <strong style="color:#241A28; font-weight: 700;">Julia Fidler</strong>, an Oakland University student who turned the quiet power of one celebration into a promise.</p>
+        <div style="margin-top: 16px; font-size: 12.5px; letter-spacing: .06em; color: #9A8478;">Julia Fidler · Founder · Oakland County, MI</div>
+      </div>
+    </section>
+
+    <!-- 4 details -->
+    <section class="bsec" data-stage="4" style="min-height: 100vh; display: flex; align-items: center; justify-content: flex-start; padding: 0 7vw;">
+      <div class="panel ovpanel" style="width: 42%; padding: 38px 42px; border-radius: 20px; background: radial-gradient(120% 130% at 0% 0%, rgba(251,248,243,.96), rgba(251,248,243,.76)); backdrop-filter: blur(3px); box-shadow: 0 30px 70px rgba(44,34,48,.10);">
+        <div style="font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B07C8C; font-weight: 700;">Step Four · The Details</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.12; margin: 16px 0 0; color: #241A28;">The care is in the <span style="font-style: italic; color: #9C5C72;">small things.</span></h2>
+        <p style="font-size: 16px; line-height: 1.75; color: #5E5158; margin: 18px 0 0;">A favourite colour. A theme they love. An allergy noted and honoured. Every cake is decorated by hand for one specific child — never generic, never rushed.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px;">
+          <span style="padding: 8px 15px; border: 1px solid #E0D2C4; border-radius: 999px; font-size: 12px; letter-spacing: .05em; color: #6B5E63; font-weight: 600;">Their name</span>
+          <span style="padding: 8px 15px; border: 1px solid #E0D2C4; border-radius: 999px; font-size: 12px; letter-spacing: .05em; color: #6B5E63; font-weight: 600;">Favourite colour</span>
+          <span style="padding: 8px 15px; border: 1px solid #E0D2C4; border-radius: 999px; font-size: 12px; letter-spacing: .05em; color: #6B5E63; font-weight: 600;">A theme they love</span>
+          <span style="padding: 8px 15px; border: 1px solid #E0D2C4; border-radius: 999px; font-size: 12px; letter-spacing: .05em; color: #6B5E63; font-weight: 600;">Allergy-friendly</span>
         </div>
       </div>
+    </section>
+
+    <!-- 5 candles -->
+    <section class="bsec" data-stage="5" style="min-height: 100vh; display: flex; align-items: center; justify-content: flex-end; padding: 0 7vw;">
+      <div class="panel ovpanel" style="width: 42%; padding: 38px 42px; border-radius: 20px; background: radial-gradient(120% 130% at 100% 0%, rgba(251,248,243,.96), rgba(251,248,243,.76)); backdrop-filter: blur(3px); box-shadow: 0 30px 70px rgba(44,34,48,.10); text-align: right;">
+        <div style="font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B07C8C; font-weight: 700;">Step Five · The Candles</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.12; margin: 16px 0 0; color: #241A28;">A candle for every child <span style="font-style: italic; color: #9C5C72;">still waiting.</span></h2>
+        <p style="font-size: 16px; line-height: 1.75; color: #5E5158; margin: 18px 0 0;">The cake is built. The candles are set. All that's left is the part that matters most — and that part is yours to give.</p>
+      </div>
+    </section>
+
+    <!-- 6 wish -->
+    <section class="bsec" data-stage="6" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 7vw;">
+      <div class="panel ovpanel" style="width: 540px; max-width: 92%; padding: 44px; border-radius: 20px; text-align: center; background: radial-gradient(120% 130% at 50% 0%, rgba(251,248,243,.97), rgba(251,248,243,.82)); backdrop-filter: blur(3px); box-shadow: 0 30px 80px rgba(44,34,48,.14);">
+        <div style="font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B07C8C; font-weight: 700;">Step Six · The Wish</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(32px, 4vw, 54px); line-height: 1.06; margin: 14px 0 0; color: #241A28;">Now — <span style="font-style: italic; color: #9C5C72;">make a wish.</span></h2>
+        <p id="wishCopyRef" style="font-size: 16px; line-height: 1.75; color: #5E5158; margin: 16px auto 0; max-width: 420px;">Blow out the candles. Then help us light them for a child who's counting on it.</p>
+        <div style="margin-top: 26px;">
+          <button id="wishBtnRef" class="btn" style="cursor: pointer; padding: 15px 30px; border-radius: 999px; background: #9C5C72; border: none; color: #FBF8F3; font-family: Mulish, sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;">✦ Make a Wish &amp; Blow</button>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px;">
+          <a href="#involved" class="btn" style="text-decoration: none; padding: 14px 26px; border-radius: 999px; background: #2C2230; color: #FBF8F3; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;">Request a Cake</a>
+          <a href="#donate" class="btn" style="text-decoration: none; padding: 14px 26px; border-radius: 999px; background: #E0B978; color: #2C2230; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;">Donate $15 = One Cake</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- solid sections below (cake scrolls away naturally as page bg ends) -->
+    <div style="position: relative; z-index: 10; background: #FBF8F3; border-top: 1px solid #EAE0D5;">
+
+      <!-- GET INVOLVED -->
+      <section id="involved" style="max-width: 1200px; margin: 0 auto; padding: 96px 36px 40px;">
+        <div data-reveal style="text-align: center; max-width: 660px; margin: 0 auto 48px;">
+          <div style="font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B07C8C; font-weight: 700;">Get Involved</div>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(30px, 4vw, 50px); line-height: 1.12; margin: 18px 0 0; color: #241A28;">Four ways to give a child <span style="font-style: italic; color: #9C5C72;">their day.</span></h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px;">
+          <div data-reveal class="card" style="background: #FFFDFA; border-radius: 14px; padding: 38px; border: 1px solid #EAE0D5; display: flex; flex-direction: column;">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #C9A86A;">i.</div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px; margin: 8px 0 0; color: #241A28;">Request a cake</h3>
+            <p style="color: #6B5E63; font-size: 15px; line-height: 1.7; margin: 12px 0 16px;">For staff, caseworkers, and approved contacts. Submit one to two weeks ahead with the child's first name, age, date, allergies, and a theme.</p>
+            <a href="https://forms.gle/fDsDwsNHysbts3EV7" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top: auto; text-align: center; text-decoration: none; padding: 14px 24px; border-radius: 999px; background: #2C2230; color: #FBF8F3; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;">Open Request Form →</a>
+          </div>
+          <div id="help" data-reveal class="card" style="background: #FFFDFA; border-radius: 14px; padding: 38px; border: 1px solid #EAE0D5; display: flex; flex-direction: column;">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #C9A86A;">ii.</div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px; margin: 8px 0 0; color: #241A28;">Bake or volunteer</h3>
+            <p style="color: #6B5E63; font-size: 15px; line-height: 1.7; margin: 12px 0 16px;">Bake from home, donate supplies, or help behind the scenes with outreach and coordination. We'll match you to the role that fits.</p>
+            <a href="https://forms.gle/FADxEFH6hs3nJbUi6" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top: auto; text-align: center; text-decoration: none; padding: 14px 24px; border-radius: 999px; background: transparent; border: 1px solid #2C2230; color: #2C2230; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;">Open Volunteer Form →</a>
+            <a href="volunteer-board.html" class="ulink" style="align-self: center; margin-top: 14px; text-decoration: none; color: #9C5C72; font-size: 12.5px; letter-spacing: .04em; font-weight: 700;">Browse the sign-up board →</a>
+          </div>
+          <div id="partner" data-reveal class="card" style="background: #FFFDFA; border-radius: 14px; padding: 38px; border: 1px solid #EAE0D5; display: flex; flex-direction: column;">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #C9A86A;">iii.</div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px; margin: 8px 0 0; color: #241A28;">Partner with us</h3>
+            <p style="color: #6B5E63; font-size: 15px; line-height: 1.7; margin: 12px 0 16px;">If your organisation serves children in foster care, shelters, or housing programs, let's build a simple, reliable cake-request process together.</p>
+            <a href="mailto:CakesAndCandlesProject@gmail.com" class="btn" style="margin-top: auto; text-align: center; text-decoration: none; padding: 14px 24px; border-radius: 999px; background: transparent; border: 1px solid #2C2230; color: #2C2230; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;">Email Us to Partner →</a>
+          </div>
+          <div id="donate" data-reveal class="card" style="background: linear-gradient(160deg, #2C2230, #463247); border-radius: 14px; padding: 38px; border: 1px solid #2C2230; display: flex; flex-direction: column; color: #FBF8F3;">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #E0B978;">iv.</div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px; margin: 8px 0 0;">Donate</h3>
+            <p style="color: rgba(251,248,243,.8); font-size: 15px; line-height: 1.7; margin: 12px 0 16px;">A small gift goes a long way — about <strong style="color:#E7D2C2;">$15 covers the ingredients for one full birthday cake.</strong> Send any amount on Venmo to <strong style="color:#E7D2C2;">@cakesandcandles</strong>.</p>
+            <a href="https://venmo.com/u/cakesandcandles" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top: auto; text-align: center; text-decoration: none; padding: 14px 24px; border-radius: 999px; background: #E0B978; color: #2C2230; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;">Donate on Venmo →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" style="max-width: 840px; margin: 0 auto; padding: 56px 36px 88px;">
+        <div data-reveal style="text-align: center; margin-bottom: 36px;">
+          <div style="font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B07C8C; font-weight: 700;">Good to Know</div>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 16px 0 0; color: #241A28;">Questions, answered.</h2>
+        </div>
+        <div data-reveal>
+          <details style="border-top: 1px solid #E6DBCF; padding: 8px 0;"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 22px; color: #241A28;">Who can request a cake?<span class="faq-plus" style="flex: none; color: #C18A98; font-size: 24px; line-height: 1; transition: transform .3s ease;">+</span></summary><p style="color: #6B5E63; font-size: 15.5px; line-height: 1.75; margin: 0 0 22px; max-width: 660px;">Requests come from staff, caseworkers, or approved program contacts at the shelters and programs we serve — not directly from families — so we can coordinate safely and reliably.</p></details>
+          <details style="border-top: 1px solid #E6DBCF; padding: 8px 0;"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 22px; color: #241A28;">How much does a cake cost the family?<span class="faq-plus" style="flex: none; color: #C18A98; font-size: 24px; line-height: 1; transition: transform .3s ease;">+</span></summary><p style="color: #6B5E63; font-size: 15.5px; line-height: 1.75; margin: 0 0 22px; max-width: 660px;">Nothing. Every cake is entirely free, always. We are funded by volunteers and donations so the celebration never comes with a price.</p></details>
+          <details style="border-top: 1px solid #E6DBCF; padding: 8px 0;"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 22px; color: #241A28;">How far in advance should we request?<span class="faq-plus" style="flex: none; color: #C18A98; font-size: 24px; line-height: 1; transition: transform .3s ease;">+</span></summary><p style="color: #6B5E63; font-size: 15.5px; line-height: 1.75; margin: 0 0 22px; max-width: 660px;">Ideally one to two weeks ahead. That gives our bakers time to plan, shop, and decorate something special — including any allergy-friendly needs.</p></details>
+          <details style="border-top: 1px solid #E6DBCF; border-bottom: 1px solid #E6DBCF; padding: 8px 0;"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 22px; color: #241A28;">I want to help but I cannot bake — is that alright?<span class="faq-plus" style="flex: none; color: #C18A98; font-size: 24px; line-height: 1; transition: transform .3s ease;">+</span></summary><p style="color: #6B5E63; font-size: 15.5px; line-height: 1.75; margin: 0 0 22px; max-width: 660px;">Of course. We also need help with supplies, deliveries, outreach, and coordination. Fill out the volunteer form and we'll find the role that fits you.</p></details>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer style="background: #241A28; color: #FBF8F3;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 60px 36px 42px;">
+          <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; align-items: start;">
+            <div>
+              <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px;">Cakes &amp; Candles Project</div>
+              <p style="color: rgba(251,248,243,.65); font-size: 15px; line-height: 1.75; margin: 16px 0 0; max-width: 340px;">Free birthday cakes for children in foster care, shelters, and residential programs across Oakland County, Michigan.</p>
+            </div>
+            <div>
+              <div style="font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: #C9A86A; margin-bottom: 16px; font-weight: 700;">Get Involved</div>
+              <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;"><a href="#involved" class="ulink" style="color: rgba(251,248,243,.8); text-decoration: none;">Request a cake</a><a href="#help" class="ulink" style="color: rgba(251,248,243,.8); text-decoration: none;">Volunteer</a><a href="volunteer-board.html" class="ulink" style="color: rgba(251,248,243,.8); text-decoration: none;">Sign-up board</a><a href="#partner" class="ulink" style="color: rgba(251,248,243,.8); text-decoration: none;">Partner with us</a><a href="#donate" class="ulink" style="color: rgba(251,248,243,.8); text-decoration: none;">Donate</a></div>
+            </div>
+            <div>
+              <div style="font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: #C9A86A; margin-bottom: 16px; font-weight: 700;">Contact</div>
+              <a href="mailto:CakesAndCandlesProject@gmail.com" class="ulink" style="color: rgba(251,248,243,.8); text-decoration: none; font-size: 15px;">CakesAndCandlesProject@gmail.com</a>
+              <p style="color: rgba(251,248,243,.5); font-size: 14px; margin: 12px 0 0;">Oakland County, MI</p>
+            </div>
+          </div>
+          <div style="margin-top: 42px; padding-top: 22px; border-top: 1px solid rgba(251,248,243,.14); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: rgba(251,248,243,.5); font-size: 13px;"><span>© 2026 Cakes &amp; Candles Project. All rights reserved.</span><span>cakesandcandlesproject.org</span></div>
+        </div>
+      </footer>
     </div>
-
-    <div class="grid-2" style="margin-top:18px;">
-  <div class="info-card">
-    <h3>Interested in volunteering?</h3>
-    <p class="muted">We would truly love your help and support. If you're willing to be part of this mission, please fill out the form below and we will reach out to you shortly.</p>
-    <p style="margin-top:14px;">
-      <a class="btn btn-secondary" href="https://forms.gle/FADxEFH6hs3nJbUi6" target="_blank" rel="noopener noreferrer">Volunteer Form</a>
-    </p>
-  </div>
-
-  <div class="info-card">
-    <h3>Contribute toward supplies</h3>
-    <p class="muted">There is absolutely no pressure to give, but if someone would like to help with supplies, every contribution goes toward things like cake boxes, boards, candles, ingredients, decorations, and delivery items.</p>
-    <p class="muted" style="margin-top:12px;"><strong>Venmo:</strong> @cakesandcandles</p>
-  </div>
+  </main>
 </div>
 
+<script>
+(function () {
+  var cakeRef = document.getElementById('cakeRef');
+  var washRef = document.getElementById('washRef');
+  var wishBtnRef = document.getElementById('wishBtnRef');
+  var wishCopyRef = document.getElementById('wishCopyRef');
 
+  var state = { stage: -1, blown: false, counted: false };
 
-<section class="section" id="partner">
-  <div class="container section-card">
-    <div class="eyebrow">Partner with Cakes &amp; Candles Project</div>
-    <h2>We welcome partnerships with programs serving children and families.</h2>
-    <p class="muted statement">
-      If your organization serves children in foster care, shelters, housing programs, or similar residential settings, we would love to connect about how birthday cake requests could work for your program.
-    </p>
-    <div class="grid-2">
-      <div class="info-card">
-        <h3>Partnership contact</h3>
-        <p class="muted">Email CakesAndCandlesProject@gmail.com to talk about referrals, request systems, or how this can best support the children in your care.</p>
-      </div>
-      <div class="info-card">
-        <h3>What partnership can look like</h3>
-        <p class="muted">A simple request process, one reliable contact person, and birthday cake requests submitted as children’s birthdays come up.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  var revealObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.16 });
+  document.querySelectorAll('[data-reveal]').forEach(function (el) { revealObs.observe(el); });
 
-<section class="section" id="founder">
-  <div class="container section-card" style="display:flex; align-items:center; gap:30px; flex-wrap:wrap;">
-    <img src="images/julia.jpg" style="width:180px; height:180px; object-fit:cover; border-radius:50%; box-shadow:0 8px 20px rgba(0,0,0,0.08);" />
-    <div style="flex:1; min-width:250px;">
-      <div class="eyebrow">About the Founder</div>
-      <h2>Meet the person behind Cakes &amp; Candles Project.</h2>
-      <p class="muted statement">
-        Cakes &amp; Candles Project was started by Julia Fidler, a student at Oakland University who has always loved baking and being involved in her community.
-      </p>
-      <p class="muted statement" style="margin-top:-6px; max-width:820px;">
-        After spending time volunteering with local nonprofits, she realized that something as simple as a birthday cake can mean much more for children who may not always get to celebrate in the same way. That idea turned into Cakes &amp; Candles Project, with the goal of making birthdays feel a little more special.
-      </p>
-    </div>
-  </div>
-</section>
-```
+  var panelObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('show'); });
+  }, { threshold: 0.25 });
+  document.querySelectorAll('.panel').forEach(function (el) { panelObs.observe(el); });
 
-  </main>
+  function countUp(el) {
+    var target = +el.dataset.count, suffix = el.dataset.suffix || '';
+    var dur = 1500, t0 = performance.now();
+    function step(t) {
+      var p = Math.min(1, (t - t0) / dur), eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-card">© 2026 Cakes &amp; Candles Project • CakesAndCandlesProject@gmail.com</div>
-    </div>
-  </footer>
+  function relight(fromBtn) {
+    state.blown = false;
+    if (cakeRef) {
+      cakeRef.querySelectorAll('.svgflame').forEach(function (f) { f.style.opacity = ''; f.classList.add('lit'); });
+      cakeRef.querySelectorAll('.svgglow').forEach(function (g) { g.style.opacity = ''; g.classList.add('lit'); });
+    }
+    if (washRef) washRef.style.opacity = '1';
+    if (fromBtn) {
+      if (wishCopyRef) wishCopyRef.textContent = "Blow out the candles. Then help us light them for a child who's counting on it.";
+      if (wishBtnRef) wishBtnRef.textContent = "✦ Make a Wish & Blow";
+    }
+  }
+
+  function apply(stage) {
+    if (cakeRef) {
+      cakeRef.querySelectorAll('.cstroke').forEach(function (p) { p.style.strokeDashoffset = (stage >= +p.dataset.stage) ? '0' : '100'; });
+      cakeRef.querySelectorAll('.gdot').forEach(function (d) { d.classList.toggle('on', stage >= +d.dataset.stage); });
+    }
+    if (stage < 6 && state.blown) relight(false);
+    var lit = stage >= 6 && !state.blown;
+    if (cakeRef) {
+      cakeRef.querySelectorAll('.svgflame').forEach(function (f) { f.classList.toggle('lit', lit); });
+      cakeRef.querySelectorAll('.svgglow').forEach(function (g) { g.classList.toggle('lit', lit); });
+    }
+    if (washRef) washRef.style.opacity = lit ? '1' : String(0.25 + Math.min(0.55, stage / 6 * 0.55));
+    document.querySelectorAll('.raildot').forEach(function (d) {
+      var on = +d.dataset.r <= stage;
+      d.style.background = on ? '#9C5C72' : 'rgba(44,34,48,.2)';
+      d.style.transform = (+d.dataset.r === stage) ? 'scale(1.5)' : 'scale(1)';
+    });
+    if (stage >= 2 && !state.counted) {
+      state.counted = true;
+      document.querySelectorAll('.counter').forEach(function (el) { countUp(el); });
+    }
+  }
+
+  function recompute() {
+    var secs = document.querySelectorAll('.bsec');
+    if (!secs.length) return;
+    var center = window.innerHeight * 0.5;
+    var stage = 0;
+    secs.forEach(function (s) { if (s.getBoundingClientRect().top < center) stage = +s.dataset.stage; });
+    if (stage !== state.stage) { state.stage = stage; apply(stage); }
+  }
+
+  function onWish() {
+    if (!cakeRef) return;
+    if (state.blown) { relight(true); return; }
+    state.blown = true;
+    var flames = cakeRef.querySelectorAll('.svgflame');
+    var glows = cakeRef.querySelectorAll('.svgglow');
+    flames.forEach(function (f, i) {
+      setTimeout(function () {
+        f.classList.remove('lit'); f.style.opacity = '0';
+        if (glows[i]) { glows[i].classList.remove('lit'); glows[i].style.opacity = '0'; }
+      }, i * 170);
+    });
+    if (washRef) washRef.style.opacity = '0.2';
+    setTimeout(function () {
+      if (wishCopyRef) wishCopyRef.innerHTML = "Your wish is made. Now help us grant it for a child who's waiting — request a cake, or fund one below.";
+      if (wishBtnRef) wishBtnRef.textContent = "↻ Light Them Again";
+    }, flames.length * 170 + 300);
+  }
+
+  if (wishBtnRef) wishBtnRef.addEventListener('click', onWish);
+  window.addEventListener('scroll', recompute, { passive: true });
+  window.addEventListener('resize', recompute, { passive: true });
+  recompute();
+})();
+</script>
 </body>
 </html>
