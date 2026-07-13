@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gallery · Cakes &amp; Candles Project</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Request a Cake · Cakes &amp; Candles Project</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,12 +13,12 @@
 <a href="index.html" class="brand"><span class="name">Cakes &amp; Candles</span><span class="sub">The Project · Est. 2026</span></a>
 <div class="navlinks">
 <a href="index.html" class="tab ">Home</a>
-<a href="gallery.html" class="tab active">Gallery</a>
-<a href="request.html" class="tab ">Request</a>
+<a href="gallery.html" class="tab ">Gallery</a>
+<a href="request.html" class="tab active">Request</a>
 <a href="volunteer.html" class="tab ">Volunteer</a>
 </div>
 </nav></header>
-<main><div class="pagehead"><div class="eyebrow">The Gallery</div><h1>Every cake tells <em>a story.</em></h1><p>Handmade birthday cakes created with care for people served by our community partners.</p></div><div class="galwrap"><div class="gal" id="gal"></div><div class="galnote" id="galnote" hidden>Photos are on their way. New cakes are added here as they are baked.</div></div></main><div class="lightbox" id="lightbox" role="dialog" aria-label="Enlarged photo"><img id="lightimg" alt=""></div>
+<main><div class="pagehead"><div class="eyebrow">For approved staff and program contacts</div><h1>Request a birthday cake.</h1><p>We work directly with organizations to coordinate free birthday cakes in a way that is simple, private, and reliable.</p></div><div class="below"><section class="section"><div class="cards"><div class="card"><h3>Who can submit</h3><p>Staff members, caseworkers, child advocates, or approved contacts from partner organizations.</p></div><div class="card"><h3>When to submit</h3><p>One to two weeks ahead whenever possible. We will still do our best with shorter notice.</p></div><div class="card"><h3>What to include</h3><p>First name or initials, date needed, age if appropriate, serving size, allergies, and any known preferences.</p></div><div class="card"><h3>Unknown details are okay</h3><p>If flavor, colors, or themes are unknown, leave them blank and the baker can use creative freedom.</p></div></div><div class="callout"><h3>Ready to submit a birthday?</h3><p>Use the request form for individual birthdays, or email us if your organization would prefer a monthly calendar or recurring partnership.</p><div class="herobtns"><a class="btn btn-dark" style="background:var(--gold);color:var(--ink);" href="https://forms.gle/fDsDwsNHysbts3EV7" target="_blank">Open Request Form</a><a class="btn btn-ghost" style="color:#FBF8F3;border-color:rgba(255,255,255,.5);" href="mailto:CakesAndCandlesProject@gmail.com">Discuss a Partnership</a></div></div></section></div></main>
 
 <footer style="background:var(--ink2);color:#FBF8F3;">
   <div style="max-width:1200px;margin:0 auto;padding:60px 36px 42px;">
@@ -52,6 +52,4 @@
   </div>
 </footer>
 
-<script>
-(function(){var API='https://api.github.com/repos/juliafidler/birthday-bakes-project-site/contents/images/gallery';var EXT=/\.(jpe?g|png|gif|webp|avif)$/i;var gal=document.getElementById('gal');var note=document.getElementById('galnote');var lightbox=document.getElementById('lightbox');var lightimg=document.getElementById('lightimg');function altFrom(name){return name.replace(EXT,'').replace(/[-_]+/g,' ').trim()||'Birthday cake';}function render(names){names=names.filter(function(n){return EXT.test(n);});if(!names.length){note.hidden=false;return;}names.sort(function(a,b){return b.localeCompare(a,undefined,{numeric:true});});names.forEach(function(name){var fig=document.createElement('figure');var img=document.createElement('img');img.src='images/gallery/'+encodeURIComponent(name);img.alt=altFrom(name);img.loading='lazy';fig.appendChild(img);fig.addEventListener('click',function(){lightimg.src=img.src;lightimg.alt=img.alt;lightbox.classList.add('open');});gal.appendChild(fig);});}lightbox.addEventListener('click',function(){lightbox.classList.remove('open');lightimg.src='';});document.addEventListener('keydown',function(e){if(e.key==='Escape'){lightbox.classList.remove('open');lightimg.src='';}});fetch(API).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(files){render(files.filter(function(f){return f.type==='file';}).map(function(f){return f.name;}));}).catch(function(){note.hidden=false;});})();
-</script></body></html>
+</body></html>
