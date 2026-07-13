@@ -19,7 +19,16 @@
 </div>
 </nav></header>
 <main>
-<section id="hero"><div class="herogrid"><div><div class="eyebrow-row"><span class="rule"></span>For people who deserve to feel remembered</div><h1>Making birthdays feel<br><span class="rem">special.</span></h1><p class="lede">Cakes &amp; Candles Project provides free birthday cakes through partnerships with shelters, residential programs, foster care services, and community organizations across Oakland County.</p><div class="herobtns"><a href="request.html" class="btn btn-dark">Request a Cake</a><a href="volunteer.html" class="btn btn-ghost">Volunteer</a></div></div><div class="herocake"><div style="filter:drop-shadow(0 18px 22px rgba(44,34,48,.12));"><svg width="430" viewBox="0 0 300 420" fill="none" role="img" aria-label="An illustrated three-tier birthday cake with lit candles">
+<section id="hero"><div class="herogrid"><div><div class="eyebrow-row"><span class="rule"></span>For people who deserve to feel remembered</div><h1>Making birthdays feel<br><span class="rem">special.</span></h1><p class="lede">Cakes &amp; Candles Project provides free birthday cakes through partnerships with shelters, residential programs, foster care services, and community organizations across Oakland County.</p><div class="herobtns"><a href="request.html" class="btn btn-dark">Request a Cake</a><a href="volunteer.html" class="btn btn-ghost">Volunteer</a></div></div><div class="herocake">
+<div class="cake-sparkles" aria-hidden="true">
+  <span class="sparkle s1">✦</span>
+  <span class="sparkle s2">✧</span>
+  <span class="sparkle s3">✦</span>
+  <span class="sparkle s4">✧</span>
+  <span class="sparkle s5">✦</span>
+  <span class="sparkle s6">✧</span>
+</div>
+<div style="filter:drop-shadow(0 18px 22px rgba(44,34,48,.12));"><svg width="430" viewBox="0 0 300 420" fill="none" role="img" aria-label="An illustrated three-tier birthday cake with lit candles">
 <defs>
 <radialGradient id="lafg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFCE80" stop-opacity=".85"/><stop offset="70%" stop-color="#FFCE80" stop-opacity="0"/></radialGradient>
 <linearGradient id="tierA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF1E4"/><stop offset="1" stop-color="#E8D3BC"/></linearGradient>
@@ -38,8 +47,8 @@
 </svg></div></div></div></section>
 <div class="below">
 <section class="section"><div class="section-head"><div class="eyebrow">Our Mission</div><h2>A cake may seem small. <em>Feeling celebrated is not.</em></h2><p>We bring together volunteer bakers and trusted program staff to make birthdays feel thoughtful, personal, and cared for.</p></div><div class="cards"><div class="card"><h3>For organizations</h3><p>Submit birthday requests through a simple form or create a recurring process that works for your program.</p><a href="request.html" class="btn btn-dark">Request or Partner</a></div><div class="card"><h3>For volunteers</h3><p>Claim a cake, ask for help with supplies or delivery, and create something meaningful without pressure to be perfect.</p><a href="volunteer.html" class="btn btn-ghost">Volunteer</a></div></div></section>
-<section class="section" style="padding-top:20px;"><div class="section-head"><div class="eyebrow">Recent Cakes</div><h2>Made with care, delivered with love.</h2></div><div class="preview-grid"><img src="images/gallery/cake-01.jpg" alt="Birthday cake"><img src="images/gallery/cake-02.jpg" alt="Birthday cake"><img src="images/gallery/cake-03.jpg" alt="Birthday cake"><img src="images/gallery/cake-04.jpg" alt="Birthday cake"></div><div style="text-align:center;margin-top:28px;"><a href="gallery.html" class="btn btn-dark">View the Gallery</a></div></section>
-<section class="section"><div class="foundergrid"><div style="position:relative;max-width:360px;width:100%;margin:0 auto;"><span aria-hidden="true" style="position:absolute;left:-14px;bottom:-14px;width:82%;height:82%;border:1.5px solid var(--rose);border-radius:20px;"></span><img src="images/julia.jpg?v=2" alt="Julia Fidler, founder"></div><div><div class="eyebrow">About the Founder</div><h2>A love of baking became a way to help others feel remembered.</h2><p>Cakes &amp; Candles Project was started by Julia Fidler, a student at Oakland University who has always loved baking and being involved in her community. What began as one idea has grown into a volunteer-powered project serving local programs throughout Oakland County.</p></div></div></section>
+<section class="section" style="padding-top:20px;"><div class="section-head"><div class="eyebrow">Recent Cakes</div><h2>Made with care, delivered with love.</h2></div><div class="preview-grid" id="home-gallery-preview"></div><div style="text-align:center;margin-top:28px;"><a href="gallery.html" class="btn btn-dark">View the Gallery</a></div></section>
+<section class="section"><div class="foundergrid"><div class="founder-photo-wrap"><span aria-hidden="true" class="founder-frame"></span><img src="images/julia.jpg?v=2" alt="Julia Fidler, founder"></div><div><div class="eyebrow">About the Founder</div><h2>A love of baking became a way to help others feel remembered.</h2><p>Cakes &amp; Candles Project was started by Julia Fidler, a student at Oakland University who has always loved baking and being involved in her community. What began as one idea has grown into a volunteer-powered project serving local programs throughout Oakland County.</p></div></div></section>
 </div></main>
 
 <footer style="background:var(--ink2);color:#FBF8F3;">
@@ -74,4 +83,43 @@
   </div>
 </footer>
 
+
+<script>
+(function () {
+  var API = 'https://api.github.com/repos/juliafidler/birthday-bakes-project-site/contents/images/gallery';
+  var EXT = /\.(jpe?g|png|gif|webp|avif)$/i;
+  var preview = document.getElementById('home-gallery-preview');
+  if (!preview) return;
+
+  fetch(API)
+    .then(function (response) {
+      if (!response.ok) throw new Error(response.status);
+      return response.json();
+    })
+    .then(function (files) {
+      var images = files
+        .filter(function (file) {
+          return file.type === 'file' && EXT.test(file.name);
+        })
+        .sort(function (a, b) {
+          return b.name.localeCompare(a.name, undefined, { numeric: true });
+        })
+        .slice(0, 4);
+
+      images.forEach(function (file) {
+        var img = document.createElement('img');
+        img.src = 'images/gallery/' + encodeURIComponent(file.name);
+        img.alt = file.name
+          .replace(EXT, '')
+          .replace(/[-_]+/g, ' ')
+          .trim() || 'Birthday cake';
+        img.loading = 'lazy';
+        preview.appendChild(img);
+      });
+    })
+    .catch(function () {
+      preview.innerHTML = '<p class="gallery-preview-note">Visit the gallery to see our latest cakes.</p>';
+    });
+})();
+</script>
 </body></html>
