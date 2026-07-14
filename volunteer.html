@@ -1,60 +1,227 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Volunteer · Cakes &amp; Candles Project</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-</head><body>
-<svg class="grain" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <filter id="grainf"><feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
-  <rect width="100%" height="100%" filter="url(#grainf)"/>
-</svg>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 
-<header class="nav"><nav>
-<a href="index.html" class="brand"><span class="name">Cakes &amp; Candles</span><span class="sub">The Project · Est. 2026</span></a>
-<div class="navlinks">
-<a href="index.html" class="tab ">Home</a>
-<a href="gallery.html" class="tab ">Gallery</a>
-<a href="request.html" class="tab ">Request</a>
-<a href="volunteer.html" class="tab active">Volunteer</a>
-</div>
-</nav></header>
-<main><div class="pagehead"><div class="eyebrow">Volunteer With Us</div><h1>Help make a birthday feel special.</h1><p>There is no pressure to take on a certain number of cakes. Claim only what fits your schedule, and ask for help whenever you need it.</p></div><div class="below"><section class="section"><div class="cards"><div class="card"><h3>New volunteer</h3><p>Start here if you have not joined the volunteer list yet. Tell us how you would like to help, and we will send you access information.</p><a class="btn btn-dark" href="volunteer-signup.html" target="_blank">Complete Volunteer Form</a></div><div class="card"><h3>Current volunteer</h3><p>Already approved? Open the volunteer board to view current requests and claim a cake.</p><a class="btn btn-ghost" href="volunteer-board.html">Open Volunteer Board</a></div><div class="card"><h3>Creative freedom</h3><p>Layer cakes, sheet cakes, cupcakes, and simple designs are all welcome. Homemade and thoughtful matters more than perfect.</p></div><div class="card"><h3>Need support?</h3><p>When you claim a cake, you can request help with supplies or delivery. Julia will follow up and coordinate what you need.</p>
-</div>
-</div>
-</section>
-</div>
-</main>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-<footer style="background:var(--ink2);color:#FBF8F3;">
-  <div style="max-width:1200px;margin:0 auto;padding:60px 36px 42px;">
-    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;align-items:start;">
-      <div>
-        <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;">Cakes &amp; Candles Project</div>
-        <p style="color:rgba(251,248,243,.65);font-size:15px;line-height:1.75;margin:16px 0 0;max-width:340px;">Free birthday cakes coordinated through shelters, residential programs, foster care services, and community organizations across Oakland County.</p>
+  <title>Volunteer · Cakes & Candles Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Mulish:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <svg
+    class="grain"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <filter id="grainf">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.82"
+        numOctaves="2"
+        stitchTiles="stitch"
+      />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+
+    <rect
+      width="100%"
+      height="100%"
+      filter="url(#grainf)"
+    />
+  </svg>
+
+  <header class="nav">
+    <nav>
+      <a href="index.html" class="brand">
+        <span class="name">Cakes &amp; Candles</span>
+        <span class="sub">The Project · Est. 2026</span>
+      </a>
+
+      <div class="navlinks">
+        <a href="index.html" class="tab">Home</a>
+        <a href="gallery.html" class="tab">Gallery</a>
+        <a href="request.html" class="tab">Request</a>
+        <a href="volunteer.html" class="tab active">Volunteer</a>
       </div>
-      <div>
-        <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2);margin-bottom:16px;font-weight:700;">Explore</div>
-        <div style="display:flex;flex-direction:column;gap:11px;font-size:15px;">
-          <a href="index.html" style="color:rgba(251,248,243,.8);text-decoration:none;">Home</a>
-          <a href="gallery.html" style="color:rgba(251,248,243,.8);text-decoration:none;">Gallery</a>
-          <a href="request.html" style="color:rgba(251,248,243,.8);text-decoration:none;">Request a Cake</a>
-          <a href="volunteer.html" style="color:rgba(251,248,243,.8);text-decoration:none;">Volunteer</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="pagehead">
+      <div class="eyebrow">
+        Bake something meaningful
+      </div>
+
+      <h1>Help make a birthday feel special.</h1>
+
+      <p>
+        Volunteer bakers help us provide thoughtful birthday cakes for
+        children, youth, and adults served by local shelters, foster care
+        programs, residential programs, and community organizations.
+      </p>
+    </div>
+
+    <div class="below">
+      <section class="section">
+        <div class="cards">
+          <div class="card">
+            <h3>Choose what works for you</h3>
+
+            <p>
+              Claim only the birthday requests that fit your schedule.
+              There is no required number of cakes or ongoing commitment.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>All experience levels are welcome</h3>
+
+            <p>
+              Cakes do not need to look professional. Thoughtful,
+              homemade cakes are exactly what this project is about.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Receive the full details</h3>
+
+            <p>
+              After you claim a request, Julia will follow up with the
+              cake preferences, serving needs, and drop-off information.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Ask for help when needed</h3>
+
+            <p>
+              Volunteers can let us know if they need assistance with
+              ingredients, supplies, or delivery.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <h3>Interested in volunteering?</h3>
+
+          <p>
+            Complete the volunteer signup form to tell us a little about
+            yourself and how you would like to help.
+          </p>
+
+          <div class="herobtns">
+            <a
+              class="btn btn-dark"
+              style="background:var(--gold);color:var(--ink);"
+              href="volunteer-signup.html?v=4"
+            >
+              Complete Volunteer Form
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer style="background:var(--ink2);color:#FBF8F3;">
+    <div style="max-width:1200px;margin:0 auto;padding:60px 36px 42px;">
+      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;align-items:start;">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;">
+            Cakes &amp; Candles Project
+          </div>
+
+          <p style="color:rgba(251,248,243,.65);font-size:15px;line-height:1.75;margin:16px 0 0;max-width:340px;">
+            Free birthday cakes coordinated through shelters, residential
+            programs, foster care services, and community organizations
+            across Oakland County.
+          </p>
+        </div>
+
+        <div>
+          <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2);margin-bottom:16px;font-weight:700;">
+            Explore
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:15px;">
+            <a
+              href="index.html"
+              style="color:rgba(251,248,243,.8);text-decoration:none;"
+            >
+              Home
+            </a>
+
+            <a
+              href="gallery.html"
+              style="color:rgba(251,248,243,.8);text-decoration:none;"
+            >
+              Gallery
+            </a>
+
+            <a
+              href="request.html"
+              style="color:rgba(251,248,243,.8);text-decoration:none;"
+            >
+              Request a Cake
+            </a>
+
+            <a
+              href="volunteer.html"
+              style="color:rgba(251,248,243,.8);text-decoration:none;"
+            >
+              Volunteer
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2);margin-bottom:16px;font-weight:700;">
+            Contact
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:15px;">
+            <a
+              href="mailto:CakesAndCandlesProject@gmail.com"
+              style="color:rgba(251,248,243,.8);text-decoration:none;"
+            >
+              CakesAndCandlesProject@gmail.com
+            </a>
+
+            <a
+              href="https://www.instagram.com/cakesandcandlesproject/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color:rgba(251,248,243,.8);text-decoration:none;"
+            >
+              @cakesandcandlesproject
+            </a>
+          </div>
+
+          <p style="color:rgba(251,248,243,.5);font-size:14px;margin:12px 0 0;">
+            Oakland County, MI
+          </p>
         </div>
       </div>
-      <div>
-        <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2);margin-bottom:16px;font-weight:700;">Contact</div>
-        <div style="display:flex;flex-direction:column;gap:11px;font-size:15px;">
-          <a href="mailto:CakesAndCandlesProject@gmail.com" style="color:rgba(251,248,243,.8);text-decoration:none;">CakesAndCandlesProject@gmail.com</a>
-          <a href="https://www.instagram.com/cakesandcandlesproject/" target="_blank" rel="noopener noreferrer" style="color:rgba(251,248,243,.8);text-decoration:none;">@cakesandcandlesproject</a>
-        </div>
-        <p style="color:rgba(251,248,243,.5);font-size:14px;margin:12px 0 0;">Oakland County, MI</p>
+
+      <div style="margin-top:42px;padding-top:22px;border-top:1px solid rgba(251,248,243,.14);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:rgba(251,248,243,.5);font-size:13px;">
+        <span>© 2026 Cakes &amp; Candles Project. All rights reserved.</span>
+        <span>cakesandcandlesproject.org</span>
       </div>
     </div>
-    <div style="margin-top:42px;padding-top:22px;border-top:1px solid rgba(251,248,243,.14);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:rgba(251,248,243,.5);font-size:13px;">
-      <span>© 2026 Cakes &amp; Candles Project. All rights reserved.</span>
-      <span>cakesandcandlesproject.org</span>
-    </div>
-  </div>
-</footer>
-
-</body></html>
+  </footer>
+</body>
+</html>
