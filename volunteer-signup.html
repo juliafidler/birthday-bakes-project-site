@@ -8,6 +8,13 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
+  <meta
+    http-equiv="Cache-Control"
+    content="no-cache, no-store, must-revalidate"
+  >
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <title>Volunteer Signup · Cakes & Candles Project</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +31,7 @@
     .form-page {
       position: relative;
       z-index: 2;
-      min-height: 70vh;
+      min-height: 72vh;
       padding: 125px 20px 70px;
       background:
         radial-gradient(
@@ -32,6 +39,94 @@
           var(--cream0),
           var(--cream1)
         );
+    }
+
+    .browser-card {
+      width: min(650px, 100%);
+      margin: 0 auto;
+      padding: 54px 42px;
+      border: 1px solid #EAE0D5;
+      border-radius: 24px;
+      background: #FFFDFA;
+      box-shadow: 0 24px 60px rgba(44, 34, 48, 0.10);
+      text-align: center;
+    }
+
+    .browser-eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold2);
+      font-family: "Mulish", sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .browser-card h1 {
+      margin: 0;
+      color: var(--ink2);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(40px, 8vw, 58px);
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    .browser-card > p {
+      max-width: 520px;
+      margin: 20px auto 0;
+      color: rgba(44, 34, 48, 0.72);
+      font-family: "Mulish", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .browser-steps {
+      max-width: 510px;
+      margin: 30px auto 0;
+      padding: 22px;
+      border: 1px solid #EAE0D5;
+      border-radius: 18px;
+      background: #FAF5EF;
+      text-align: left;
+    }
+
+    .browser-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .browser-step + .browser-step {
+      margin-top: 20px;
+    }
+
+    .step-number {
+      flex: 0 0 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--ink2);
+      color: #FBF8F3;
+      font-family: "Mulish", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .browser-step p {
+      margin: 4px 0 0;
+      color: rgba(44, 34, 48, 0.78);
+      font-family: "Mulish", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .browser-note {
+      margin-top: 24px !important;
+      font-size: 13px !important;
+      color: rgba(44, 34, 48, 0.55) !important;
     }
 
     .form-frame-wrap {
@@ -73,94 +168,6 @@
       text-underline-offset: 3px;
     }
 
-    .in-app-card {
-      width: min(650px, 100%);
-      margin: 0 auto;
-      padding: 54px 42px;
-      border: 1px solid #EAE0D5;
-      border-radius: 24px;
-      background: #FFFDFA;
-      box-shadow: 0 24px 60px rgba(44, 34, 48, 0.10);
-      text-align: center;
-    }
-
-    .in-app-eyebrow {
-      margin: 0 0 14px;
-      color: var(--gold2);
-      font-family: "Mulish", sans-serif;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .in-app-card h1 {
-      margin: 0;
-      color: var(--ink2);
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(38px, 7vw, 54px);
-      font-weight: 600;
-      line-height: 1.05;
-    }
-
-    .in-app-card > p {
-      max-width: 500px;
-      margin: 20px auto 0;
-      color: rgba(44, 34, 48, 0.72);
-      font-family: "Mulish", sans-serif;
-      font-size: 16px;
-      line-height: 1.75;
-    }
-
-    .browser-steps {
-      max-width: 500px;
-      margin: 28px auto 0;
-      padding: 22px;
-      border: 1px solid #EAE0D5;
-      border-radius: 18px;
-      background: #FAF5EF;
-      text-align: left;
-    }
-
-    .browser-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .browser-step + .browser-step {
-      margin-top: 18px;
-    }
-
-    .step-number {
-      flex: 0 0 34px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--ink2);
-      color: #FBF8F3;
-      font-family: "Mulish", sans-serif;
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .browser-step p {
-      margin: 3px 0 0;
-      color: rgba(44, 34, 48, 0.76);
-      font-family: "Mulish", sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .browser-note {
-      margin-top: 24px !important;
-      font-size: 13px !important;
-      color: rgba(44, 34, 48, 0.55) !important;
-    }
-
     [hidden] {
       display: none !important;
     }
@@ -170,13 +177,13 @@
         padding: 105px 10px 45px;
       }
 
-      .form-frame {
-        height: 1700px;
-      }
-
-      .in-app-card {
+      .browser-card {
         padding: 44px 24px;
         border-radius: 20px;
+      }
+
+      .form-frame {
+        height: 1700px;
       }
     }
 
@@ -186,7 +193,7 @@
         padding-left: 8px;
       }
 
-      .in-app-card {
+      .browser-card {
         padding: 38px 20px;
       }
 
@@ -222,66 +229,37 @@
 
   <header class="nav">
     <nav>
-      <a
-        href="https://cakesandcandlesproject.org/index.html"
-        class="brand"
-      >
+      <a href="index.html" class="brand">
         <span class="name">Cakes &amp; Candles</span>
         <span class="sub">The Project · Est. 2026</span>
       </a>
 
       <div class="navlinks">
-        <a
-          href="https://cakesandcandlesproject.org/index.html"
-          class="tab"
-        >
-          Home
-        </a>
-
-        <a
-          href="https://cakesandcandlesproject.org/gallery.html"
-          class="tab"
-        >
-          Gallery
-        </a>
-
-        <a
-          href="https://cakesandcandlesproject.org/request.html"
-          class="tab"
-        >
-          Request
-        </a>
-
-        <a
-          href="https://cakesandcandlesproject.org/volunteer.html"
-          class="tab active"
-        >
-          Volunteer
-        </a>
+        <a href="index.html" class="tab">Home</a>
+        <a href="gallery.html" class="tab">Gallery</a>
+        <a href="request.html" class="tab">Request</a>
+        <a href="volunteer.html" class="tab active">Volunteer</a>
       </div>
     </nav>
   </header>
 
   <main class="form-page">
 
-    <!-- Instagram and Facebook browser instructions -->
+    <!-- This is the only content Instagram users will see. -->
     <section
-      id="inAppBrowserCard"
-      class="in-app-card"
-      aria-labelledby="volunteerSignupHeading"
+      id="instagramInstructions"
+      class="browser-card"
       hidden
     >
-      <div class="in-app-eyebrow">
+      <div class="browser-eyebrow">
         Cakes &amp; Candles Project
       </div>
 
-      <h1 id="volunteerSignupHeading">
-        Open in Safari
-      </h1>
+      <h1>Open in Your Browser</h1>
 
       <p>
-        Instagram’s browser cannot load the volunteer signup form correctly.
-        Please open this page in your phone’s regular browser.
+        Instagram cannot load the volunteer signup form correctly.
+        Please open this page in Safari or your phone’s regular browser.
       </p>
 
       <div class="browser-steps">
@@ -289,8 +267,8 @@
           <span class="step-number">1</span>
 
           <p>
-            Tap the <strong>three dots</strong> in the top-right corner of
-            this screen.
+            Tap the <strong>three dots</strong> in the top-right corner
+            of this screen.
           </p>
         </div>
 
@@ -305,13 +283,13 @@
       </div>
 
       <p class="browser-note">
-        Once this page opens in Safari or Chrome, the volunteer signup form
-        will load automatically.
+        The volunteer signup form will load automatically after the page
+        opens outside Instagram.
       </p>
     </section>
 
-    <!-- Safari, Chrome, and other regular browsers -->
-    <section id="embeddedFormSection" hidden>
+    <!-- This is shown only in Safari, Chrome, and regular browsers. -->
+    <section id="regularBrowserForm" hidden>
       <div
         class="form-frame-wrap"
         id="formFrameWrap"
@@ -333,15 +311,15 @@
     </section>
 
     <noscript>
-      <section class="in-app-card">
-        <div class="in-app-eyebrow">
+      <section class="browser-card">
+        <div class="browser-eyebrow">
           Cakes &amp; Candles Project
         </div>
 
-        <h1>Open in Safari</h1>
+        <h1>Open in Your Browser</h1>
 
         <p>
-          Please tap the three dots in the top-right corner and select
+          Tap the three dots in the top-right corner and select
           <strong>Open in external browser</strong> or
           <strong>Open in Safari</strong>.
         </p>
@@ -371,28 +349,28 @@
 
           <div style="display:flex;flex-direction:column;gap:11px;font-size:15px;">
             <a
-              href="https://cakesandcandlesproject.org/index.html"
+              href="index.html"
               style="color:rgba(251,248,243,.8);text-decoration:none;"
             >
               Home
             </a>
 
             <a
-              href="https://cakesandcandlesproject.org/gallery.html"
+              href="gallery.html"
               style="color:rgba(251,248,243,.8);text-decoration:none;"
             >
               Gallery
             </a>
 
             <a
-              href="https://cakesandcandlesproject.org/request.html"
+              href="request.html"
               style="color:rgba(251,248,243,.8);text-decoration:none;"
             >
               Request a Cake
             </a>
 
             <a
-              href="https://cakesandcandlesproject.org/volunteer.html"
+              href="volunteer.html"
               style="color:rgba(251,248,243,.8);text-decoration:none;"
             >
               Volunteer
@@ -431,41 +409,47 @@
     (function () {
       "use strict";
 
-      const FORM_URL =
+      var FORM_URL =
         "https://script.google.com/macros/s/AKfycbwMEJUluG-BaVmdGZqX-VZFuDmJnotFcXyGkweKh_Kdx8Smc-wQnZCnvay-brUAhCmv/exec";
 
-      const userAgent =
+      var userAgent =
         navigator.userAgent ||
         navigator.vendor ||
         "";
 
-      const isInstagramOrFacebookBrowser =
-        /Instagram|FBAN|FBAV|FBIOS|FB_IAB|FB4A/i.test(userAgent);
+      var isInstagram =
+        /Instagram/i.test(userAgent);
 
-      const inAppBrowserCard =
-        document.getElementById("inAppBrowserCard");
+      var isFacebookBrowser =
+        /FBAN|FBAV|FBIOS|FB_IAB|FB4A/i.test(userAgent);
 
-      const embeddedFormSection =
-        document.getElementById("embeddedFormSection");
+      var isInAppBrowser =
+        isInstagram || isFacebookBrowser;
 
-      const formFrameWrap =
+      var instagramInstructions =
+        document.getElementById("instagramInstructions");
+
+      var regularBrowserForm =
+        document.getElementById("regularBrowserForm");
+
+      var formFrameWrap =
         document.getElementById("formFrameWrap");
 
       if (
-        !inAppBrowserCard ||
-        !embeddedFormSection ||
+        !instagramInstructions ||
+        !regularBrowserForm ||
         !formFrameWrap
       ) {
         return;
       }
 
-      if (isInstagramOrFacebookBrowser) {
-        inAppBrowserCard.hidden = false;
-        embeddedFormSection.hidden = true;
+      if (isInAppBrowser) {
+        instagramInstructions.hidden = false;
+        regularBrowserForm.hidden = true;
         return;
       }
 
-      const iframe = document.createElement("iframe");
+      var iframe = document.createElement("iframe");
 
       iframe.className = "form-frame";
       iframe.src = FORM_URL;
@@ -479,8 +463,8 @@
 
       formFrameWrap.appendChild(iframe);
 
-      embeddedFormSection.hidden = false;
-      inAppBrowserCard.hidden = true;
+      instagramInstructions.hidden = true;
+      regularBrowserForm.hidden = false;
     })();
   </script>
 </body>
