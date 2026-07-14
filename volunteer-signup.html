@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
 
   <title>Volunteer Signup · Cakes & Candles Project</title>
 
@@ -20,6 +24,7 @@
     .form-page {
       position: relative;
       z-index: 2;
+      min-height: 70vh;
       padding: 125px 20px 70px;
       background:
         radial-gradient(
@@ -36,7 +41,7 @@
       border: 1px solid #EAE0D5;
       border-radius: 22px;
       background: #FFFDFA;
-      box-shadow: 0 24px 60px rgba(44, 34, 48, .10);
+      box-shadow: 0 24px 60px rgba(44, 34, 48, 0.10);
     }
 
     .form-frame {
@@ -44,6 +49,110 @@
       width: 100%;
       height: 1500px;
       border: 0;
+      background: #FFFDFA;
+    }
+
+    .direct-form-link {
+      width: min(920px, 100%);
+      margin: 18px auto 0;
+      text-align: center;
+    }
+
+    .direct-form-link p {
+      margin: 0;
+      color: rgba(44, 34, 48, 0.68);
+      font-family: "Mulish", sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .direct-form-link a {
+      color: var(--ink2);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /*
+      This card is displayed in Instagram and Facebook's
+      built-in browsers instead of the iframe.
+    */
+    .in-app-card {
+      width: min(650px, 100%);
+      margin: 0 auto;
+      padding: 54px 42px;
+      border: 1px solid #EAE0D5;
+      border-radius: 24px;
+      background: #FFFDFA;
+      box-shadow: 0 24px 60px rgba(44, 34, 48, 0.10);
+      text-align: center;
+    }
+
+    .in-app-eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold2);
+      font-family: "Mulish", sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .in-app-card h1 {
+      margin: 0;
+      color: var(--ink2);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(36px, 7vw, 52px);
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    .in-app-card p {
+      max-width: 500px;
+      margin: 20px auto 0;
+      color: rgba(44, 34, 48, 0.72);
+      font-family: "Mulish", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .open-form-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      margin-top: 30px;
+      padding: 0 28px;
+      border: 1px solid var(--ink2);
+      border-radius: 999px;
+      background: var(--ink2);
+      color: #FBF8F3;
+      font-family: "Mulish", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease;
+    }
+
+    .open-form-button:hover,
+    .open-form-button:focus-visible {
+      transform: translateY(-2px);
+      background: #46384C;
+      box-shadow: 0 12px 24px rgba(44, 34, 48, 0.18);
+    }
+
+    .browser-note {
+      margin-top: 22px !important;
+      font-size: 13px !important;
+      color: rgba(44, 34, 48, 0.55) !important;
+    }
+
+    [hidden] {
+      display: none !important;
     }
 
     @media (max-width: 700px) {
@@ -54,12 +163,38 @@
       .form-frame {
         height: 1700px;
       }
+
+      .in-app-card {
+        padding: 44px 24px;
+        border-radius: 20px;
+      }
+
+      .open-form-button {
+        width: 100%;
+        padding-right: 18px;
+        padding-left: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .form-page {
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+
+      .in-app-card {
+        padding: 38px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <svg class="grain" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <svg
+    class="grain"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
     <filter id="grainf">
       <feTurbulence
         type="fractalNoise"
@@ -69,7 +204,12 @@
       />
       <feColorMatrix type="saturate" values="0" />
     </filter>
-    <rect width="100%" height="100%" filter="url(#grainf)" />
+
+    <rect
+      width="100%"
+      height="100%"
+      filter="url(#grainf)"
+    />
   </svg>
 
   <header class="nav">
@@ -89,14 +229,87 @@
   </header>
 
   <main class="form-page">
-    <div class="form-frame-wrap">
-      <iframe
-        class="form-frame"
-        src="https://script.google.com/macros/s/AKfycbwMEJUluG-BaVmdGZqX-VZFuDmJnotFcXyGkweKh_Kdx8Smc-wQnZCnvay-brUAhCmv/exec"
-        title="Cakes & Candles volunteer signup form"
-        loading="eager"
-      ></iframe>
-    </div>
+
+    <!--
+      Instagram/Facebook browser version.
+      JavaScript displays this instead of the iframe.
+    -->
+    <section
+      id="inAppBrowserCard"
+      class="in-app-card"
+      aria-labelledby="volunteerSignupHeading"
+      hidden
+    >
+      <div class="in-app-eyebrow">
+        Cakes &amp; Candles Project
+      </div>
+
+      <h1 id="volunteerSignupHeading">
+        Volunteer Signup
+      </h1>
+
+      <p>
+        Thank you for your interest in volunteering with Cakes &amp; Candles.
+        Tap the button below to open the secure volunteer signup form.
+      </p>
+
+      <a
+        id="inAppFormButton"
+        class="open-form-button"
+        href="https://script.google.com/macros/s/AKfycbwMEJUluG-BaVmdGZqX-VZFuDmJnotFcXyGkweKh_Kdx8Smc-wQnZCnvay-brUAhCmv/exec"
+        target="_top"
+      >
+        Open Volunteer Signup
+      </a>
+
+      <p class="browser-note">
+        Having trouble? Tap the three dots in Instagram and select
+        “Open in external browser.”
+      </p>
+    </section>
+
+    <!-- Normal Safari, Chrome, and Google browser version -->
+    <section id="embeddedFormSection" hidden>
+      <div class="form-frame-wrap" id="formFrameWrap">
+        <!-- The iframe is inserted here with JavaScript. -->
+      </div>
+
+      <div class="direct-form-link">
+        <p>
+          Form not displaying correctly?
+          <a
+            href="https://script.google.com/macros/s/AKfycbwMEJUluG-BaVmdGZqX-VZFuDmJnotFcXyGkweKh_Kdx8Smc-wQnZCnvay-brUAhCmv/exec"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open the volunteer signup directly.
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Fallback when JavaScript is disabled -->
+    <noscript>
+      <section class="in-app-card">
+        <div class="in-app-eyebrow">
+          Cakes &amp; Candles Project
+        </div>
+
+        <h1>Volunteer Signup</h1>
+
+        <p>
+          Please use the button below to open the volunteer signup form.
+        </p>
+
+        <a
+          class="open-form-button"
+          href="https://script.google.com/macros/s/AKfycbwMEJUluG-BaVmdGZqX-VZFuDmJnotFcXyGkweKh_Kdx8Smc-wQnZCnvay-brUAhCmv/exec"
+          target="_top"
+        >
+          Open Volunteer Signup
+        </a>
+      </section>
+    </noscript>
   </main>
 
   <footer style="background:var(--ink2);color:#FBF8F3;">
@@ -108,8 +321,9 @@
           </div>
 
           <p style="color:rgba(251,248,243,.65);font-size:15px;line-height:1.75;margin:16px 0 0;max-width:340px;">
-            Free birthday cakes coordinated through shelters, residential programs,
-            foster care services, and community organizations across Oakland County.
+            Free birthday cakes coordinated through shelters, residential
+            programs, foster care services, and community organizations
+            across Oakland County.
           </p>
         </div>
 
@@ -119,10 +333,33 @@
           </div>
 
           <div style="display:flex;flex-direction:column;gap:11px;font-size:15px;">
-            <a href="index.html" style="color:rgba(251,248,243,.8);text-decoration:none;">Home</a>
-            <a href="gallery.html" style="color:rgba(251,248,243,.8);text-decoration:none;">Gallery</a>
-            <a href="request.html" style="color:rgba(251,248,243,.8);text-decoration:none;">Request a Cake</a>
-            <a href="volunteer.html" style="color:rgba(251,248,243,.8);text-decoration:none;">Volunteer</a>
+            <a
+              href="index.html"
+              style="color:rgba(251,248,243,.8);text-decoration:none;"
+            >
+              Home
+            </a>
+
+            <a
+              href="gallery.html"
+              style="color:rgba(251,248,243,.8);text-decoration:none;"
+            >
+              Gallery
+            </a>
+
+            <a
+              href="request.html"
+              style="color:rgba(251,248,243,.8);text-decoration:none;"
+            >
+              Request a Cake
+            </a>
+
+            <a
+              href="volunteer.html"
+              style="color:rgba(251,248,243,.8);text-decoration:none;"
+            >
+              Volunteer
+            </a>
           </div>
         </div>
 
@@ -152,5 +389,79 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const FORM_URL =
+        "https://script.google.com/macros/s/AKfycbwMEJUluG-BaVmdGZqX-VZFuDmJnotFcXyGkweKh_Kdx8Smc-wQnZCnvay-brUAhCmv/exec";
+
+      const userAgent =
+        navigator.userAgent ||
+        navigator.vendor ||
+        "";
+
+      /*
+        Instagram and Facebook identify their in-app browsers
+        with one or more of these values.
+      */
+      const isMetaInAppBrowser =
+        /Instagram|FBAN|FBAV|FBIOS|FB_IAB|FB4A/i.test(userAgent);
+
+      const inAppBrowserCard =
+        document.getElementById("inAppBrowserCard");
+
+      const embeddedFormSection =
+        document.getElementById("embeddedFormSection");
+
+      const formFrameWrap =
+        document.getElementById("formFrameWrap");
+
+      const inAppFormButton =
+        document.getElementById("inAppFormButton");
+
+      if (
+        !inAppBrowserCard ||
+        !embeddedFormSection ||
+        !formFrameWrap ||
+        !inAppFormButton
+      ) {
+        return;
+      }
+
+      inAppFormButton.href = FORM_URL;
+
+      if (isMetaInAppBrowser) {
+        /*
+          Do not create the iframe at all inside Instagram.
+          The volunteer opens the Apps Script as the main page instead.
+        */
+        inAppBrowserCard.hidden = false;
+        embeddedFormSection.hidden = true;
+        return;
+      }
+
+      /*
+        Normal browsers receive the embedded signup form.
+        Creating it here prevents Instagram from trying to load it first.
+      */
+      const iframe = document.createElement("iframe");
+
+      iframe.className = "form-frame";
+      iframe.src = FORM_URL;
+      iframe.title = "Cakes & Candles volunteer signup form";
+      iframe.loading = "eager";
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.setAttribute(
+        "referrerpolicy",
+        "strict-origin-when-cross-origin"
+      );
+
+      formFrameWrap.appendChild(iframe);
+      embeddedFormSection.hidden = false;
+      inAppBrowserCard.hidden = true;
+    })();
+  </script>
 </body>
 </html>
