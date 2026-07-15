@@ -20,6 +20,7 @@
     .form-page {
       position: relative;
       z-index: 2;
+      min-height: 72vh;
       padding: 125px 20px 70px;
       background:
         radial-gradient(
@@ -27,6 +28,94 @@
           var(--cream0),
           var(--cream1)
         );
+    }
+
+    .browser-card {
+      width: min(650px, 100%);
+      margin: 0 auto;
+      padding: 54px 42px;
+      border: 1px solid #EAE0D5;
+      border-radius: 24px;
+      background: #FFFDFA;
+      box-shadow: 0 24px 60px rgba(44, 34, 48, .10);
+      text-align: center;
+    }
+
+    .browser-eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold2);
+      font-family: "Mulish", sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .browser-card h1 {
+      margin: 0;
+      color: var(--ink2);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(40px, 8vw, 58px);
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    .browser-card > p {
+      max-width: 520px;
+      margin: 20px auto 0;
+      color: rgba(44, 34, 48, .72);
+      font-family: "Mulish", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .browser-steps {
+      max-width: 510px;
+      margin: 30px auto 0;
+      padding: 22px;
+      border: 1px solid #EAE0D5;
+      border-radius: 18px;
+      background: #FAF5EF;
+      text-align: left;
+    }
+
+    .browser-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .browser-step + .browser-step {
+      margin-top: 20px;
+    }
+
+    .step-number {
+      flex: 0 0 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--ink2);
+      color: #FBF8F3;
+      font-family: "Mulish", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .browser-step p {
+      margin: 4px 0 0;
+      color: rgba(44, 34, 48, .78);
+      font-family: "Mulish", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .browser-note {
+      margin-top: 24px !important;
+      color: rgba(44, 34, 48, .55) !important;
+      font-size: 13px !important;
     }
 
     .form-frame-wrap {
@@ -46,9 +135,18 @@
       border: 0;
     }
 
+    [hidden] {
+      display: none !important;
+    }
+
     @media (max-width: 700px) {
       .form-page {
         padding: 105px 10px 45px;
+      }
+
+      .browser-card {
+        padding: 44px 24px;
+        border-radius: 20px;
       }
 
       .form-frame {
@@ -89,7 +187,41 @@
   </header>
 
   <main class="form-page">
-    <div class="form-frame-wrap">
+    <section id="instagramInstructions" class="browser-card" hidden>
+      <div class="browser-eyebrow">Cakes &amp; Candles Project</div>
+
+      <h1>Open in Your Browser</h1>
+
+      <p>
+        Instagram cannot load the cake request form correctly.
+        Please open this page in Safari or your phone’s regular browser.
+      </p>
+
+      <div class="browser-steps">
+        <div class="browser-step">
+          <span class="step-number">1</span>
+          <p>
+            Tap the <strong>three dots</strong> in the top-right corner
+            of this screen.
+          </p>
+        </div>
+
+        <div class="browser-step">
+          <span class="step-number">2</span>
+          <p>
+            Select <strong>Open in external browser</strong> or
+            <strong>Open in Safari</strong>.
+          </p>
+        </div>
+      </div>
+
+      <p class="browser-note">
+        The cake request form will load automatically after the page
+        opens outside Instagram.
+      </p>
+    </section>
+
+    <div id="regularBrowserForm" class="form-frame-wrap" hidden>
       <iframe
         class="form-frame"
         src="https://script.google.com/macros/s/AKfycbxLqUv8ot9H9gpA5rbR8VyTd6FTy4banDmlB3FxiOz_crXeh176dxTmCOu8oknfCwQh/exec"
@@ -97,6 +229,18 @@
         loading="eager"
       ></iframe>
     </div>
+
+    <noscript>
+      <section class="browser-card">
+        <div class="browser-eyebrow">Cakes &amp; Candles Project</div>
+        <h1>Open in Your Browser</h1>
+        <p>
+          Tap the three dots in the top-right corner and select
+          <strong>Open in external browser</strong> or
+          <strong>Open in Safari</strong>.
+        </p>
+      </section>
+    </noscript>
   </main>
 
   <footer style="background:var(--ink2);color:#FBF8F3;">
@@ -152,5 +296,34 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var userAgent = navigator.userAgent || navigator.vendor || "";
+      var isInstagram = /Instagram/i.test(userAgent);
+      var isFacebookBrowser =
+        /FBAN|FBAV|FBIOS|FB_IAB|FB4A/i.test(userAgent);
+
+      var instagramInstructions =
+        document.getElementById("instagramInstructions");
+      var regularBrowserForm =
+        document.getElementById("regularBrowserForm");
+
+      if (!instagramInstructions || !regularBrowserForm) {
+        return;
+      }
+
+      if (isInstagram || isFacebookBrowser) {
+        instagramInstructions.hidden = false;
+        regularBrowserForm.hidden = true;
+        return;
+      }
+
+      instagramInstructions.hidden = true;
+      regularBrowserForm.hidden = false;
+    })();
+  </script>
 </body>
 </html>
