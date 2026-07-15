@@ -16,6 +16,21 @@
 
   <link rel="stylesheet" href="styles.css">
 
+  <script>
+    (function () {
+      var isMetaInAppBrowser =
+        /Instagram|FBAN|FBAV|FBIOS|FB_IAB|FB4A/i.test(
+          navigator.userAgent || ""
+        );
+
+      if (isMetaInAppBrowser) {
+        window.location.replace(
+          "https://script.google.com/macros/s/AKfycbxLqUv8ot9H9gpA5rbR8VyTd6FTy4banDmlB3FxiOz_crXeh176dxTmCOu8oknfCwQh/exec"
+        );
+      }
+    })();
+  </script>
+
   <style>
     .form-page {
       position: relative;
