@@ -41,94 +41,6 @@
         );
     }
 
-    .browser-card {
-      width: min(650px, 100%);
-      margin: 0 auto;
-      padding: 54px 42px;
-      border: 1px solid #EAE0D5;
-      border-radius: 24px;
-      background: #FFFDFA;
-      box-shadow: 0 24px 60px rgba(44, 34, 48, 0.10);
-      text-align: center;
-    }
-
-    .browser-eyebrow {
-      margin: 0 0 14px;
-      color: var(--gold2);
-      font-family: "Mulish", sans-serif;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .browser-card h1 {
-      margin: 0;
-      color: var(--ink2);
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(40px, 8vw, 58px);
-      font-weight: 600;
-      line-height: 1.05;
-    }
-
-    .browser-card > p {
-      max-width: 520px;
-      margin: 20px auto 0;
-      color: rgba(44, 34, 48, 0.72);
-      font-family: "Mulish", sans-serif;
-      font-size: 16px;
-      line-height: 1.75;
-    }
-
-    .browser-steps {
-      max-width: 510px;
-      margin: 30px auto 0;
-      padding: 22px;
-      border: 1px solid #EAE0D5;
-      border-radius: 18px;
-      background: #FAF5EF;
-      text-align: left;
-    }
-
-    .browser-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .browser-step + .browser-step {
-      margin-top: 20px;
-    }
-
-    .step-number {
-      flex: 0 0 36px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--ink2);
-      color: #FBF8F3;
-      font-family: "Mulish", sans-serif;
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .browser-step p {
-      margin: 4px 0 0;
-      color: rgba(44, 34, 48, 0.78);
-      font-family: "Mulish", sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .browser-note {
-      margin-top: 24px !important;
-      font-size: 13px !important;
-      color: rgba(44, 34, 48, 0.55) !important;
-    }
-
     .form-frame-wrap {
       width: min(920px, 100%);
       margin: 0 auto;
@@ -168,18 +80,9 @@
       text-underline-offset: 3px;
     }
 
-    [hidden] {
-      display: none !important;
-    }
-
     @media (max-width: 700px) {
       .form-page {
         padding: 105px 10px 45px;
-      }
-
-      .browser-card {
-        padding: 44px 24px;
-        border-radius: 20px;
       }
 
       .form-frame {
@@ -193,13 +96,6 @@
         padding-left: 8px;
       }
 
-      .browser-card {
-        padding: 38px 20px;
-      }
-
-      .browser-steps {
-        padding: 18px;
-      }
     }
   </style>
 </head>
@@ -245,55 +141,16 @@
 
   <main class="form-page">
 
-    <!-- This is the only content Instagram users will see. -->
-    <section
-      id="instagramInstructions"
-      class="browser-card"
-      hidden
-    >
-      <div class="browser-eyebrow">
-        Cakes &amp; Candles Project
+    <section>
+      <div class="form-frame-wrap">
+        <iframe
+          class="form-frame"
+          src="https://script.google.com/macros/s/AKfycbwMEJUluG-BaVmdGZqX-VZFuDmJnotFcXyGkweKh_Kdx8Smc-wQnZCnvay-brUAhCmv/exec"
+          title="Cakes &amp; Candles volunteer signup form"
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
       </div>
-
-      <h1>Open in Your Browser</h1>
-
-      <p>
-        Instagram cannot load the volunteer signup form correctly.
-        Please open this page in Safari or your phone’s regular browser.
-      </p>
-
-      <div class="browser-steps">
-        <div class="browser-step">
-          <span class="step-number">1</span>
-
-          <p>
-            Tap the <strong>three dots</strong> in the top-right corner
-            of this screen.
-          </p>
-        </div>
-
-        <div class="browser-step">
-          <span class="step-number">2</span>
-
-          <p>
-            Select <strong>Open in external browser</strong> or
-            <strong>Open in Safari</strong>.
-          </p>
-        </div>
-      </div>
-
-      <p class="browser-note">
-        The volunteer signup form will load automatically after the page
-        opens outside Instagram.
-      </p>
-    </section>
-
-    <!-- This is shown only in Safari, Chrome, and regular browsers. -->
-    <section id="regularBrowserForm" hidden>
-      <div
-        class="form-frame-wrap"
-        id="formFrameWrap"
-      ></div>
 
       <div class="direct-form-link">
         <p>
@@ -301,8 +158,6 @@
 
           <a
             href="https://script.google.com/macros/s/AKfycbwMEJUluG-BaVmdGZqX-VZFuDmJnotFcXyGkweKh_Kdx8Smc-wQnZCnvay-brUAhCmv/exec"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Open the volunteer signup directly.
           </a>
@@ -310,21 +165,6 @@
       </div>
     </section>
 
-    <noscript>
-      <section class="browser-card">
-        <div class="browser-eyebrow">
-          Cakes &amp; Candles Project
-        </div>
-
-        <h1>Open in Your Browser</h1>
-
-        <p>
-          Tap the three dots in the top-right corner and select
-          <strong>Open in external browser</strong> or
-          <strong>Open in Safari</strong>.
-        </p>
-      </section>
-    </noscript>
   </main>
 
   <footer style="background:var(--ink2);color:#FBF8F3;">
@@ -405,67 +245,5 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      "use strict";
-
-      var FORM_URL =
-        "https://script.google.com/macros/s/AKfycbwMEJUluG-BaVmdGZqX-VZFuDmJnotFcXyGkweKh_Kdx8Smc-wQnZCnvay-brUAhCmv/exec";
-
-      var userAgent =
-        navigator.userAgent ||
-        navigator.vendor ||
-        "";
-
-      var isInstagram =
-        /Instagram/i.test(userAgent);
-
-      var isFacebookBrowser =
-        /FBAN|FBAV|FBIOS|FB_IAB|FB4A/i.test(userAgent);
-
-      var isInAppBrowser =
-        isInstagram || isFacebookBrowser;
-
-      var instagramInstructions =
-        document.getElementById("instagramInstructions");
-
-      var regularBrowserForm =
-        document.getElementById("regularBrowserForm");
-
-      var formFrameWrap =
-        document.getElementById("formFrameWrap");
-
-      if (
-        !instagramInstructions ||
-        !regularBrowserForm ||
-        !formFrameWrap
-      ) {
-        return;
-      }
-
-      if (isInAppBrowser) {
-        instagramInstructions.hidden = false;
-        regularBrowserForm.hidden = true;
-        return;
-      }
-
-      var iframe = document.createElement("iframe");
-
-      iframe.className = "form-frame";
-      iframe.src = FORM_URL;
-      iframe.title = "Cakes & Candles volunteer signup form";
-      iframe.loading = "eager";
-
-      iframe.setAttribute(
-        "referrerpolicy",
-        "strict-origin-when-cross-origin"
-      );
-
-      formFrameWrap.appendChild(iframe);
-
-      instagramInstructions.hidden = true;
-      regularBrowserForm.hidden = false;
-    })();
-  </script>
 </body>
 </html>
